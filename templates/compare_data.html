@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare Warcraft Logs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Compare Data</h1>
+    <div id="MyGraphData" style="display:none;">{{ MyGraphData | tojson }}</div>
+    <div id="OtherGraphData" style="display:none;">{{ OtherGraphData | tojson }}</div>
+    <div id="TimeLength"  style="display:none;">{{ TimeLength }}</div>
+    <div id="dType" style="display:none;">{{ dType }}</div>
+    <div id="MyCastEvent" style="display:none;">{{ MyCastEvent | tojson }}</div>
+    <div id="OtherCastEvent" style="display:none;">{{ OtherCastEvent | tojson }}</div>
+    <div id="MyBuffEvent" style="display:none;">{{ MyBuffEvent | tojson }}</div>
+    <div id="OtherBuffEvent" style="display:none;">{{ OtherBuffEvent | tojson }}</div>
+    <div id="spellDict" style="display:none;">{{ spellDict | tojson }}</div>
+    <div id="MyStartTime" style="display:none;">{{ MyStartTime }}</div>
+    <div id="OtherStartTime" style="display:none;">{{ OtherStartTime }}</div>
+
+    <div id="containerWrapper" style="width:100%; overflow-x:auto; height: 800px; box-sizing: border-box;">
+        <div id="container"></div>
+        <hr>
+        <div id="MyCast" style="height: 40px;border: 4px; display: flex;">
+            <div id="MyCastTitle" style="position:relative">MyCast</div>
+            <div id="MyCastGraph" style="position:relative"></div>
+        </div>
+        <hr>
+        <div id="OtherCast" style="height: 40px;border: 4px; display: flex;">
+            <div id="OtherCastTitle" style="position:relative">OtherCast</div>
+            <div id="OtherCastGraph" style="position:relative"></div>
+        </div>
+    </div>
+    <a href="/">Go back</a>
+    <script src="{{ url_for('static', filename='compare_log.js') }}"></script>
+</body>
+</html>
