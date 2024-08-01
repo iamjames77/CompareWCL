@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Warcraft Logs Data Compare</title>
+    <title>Compare Warcraft Log</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <nav>Top Navigation Bar</nav>
     <h1>Enter Report Code</h1>
     <form action="/compare_data" method="post">
+        
         <label for="MyURL">My Report URL:</label>
         <input type="text" id="MyURL" name="MyURL" required>
         <br>
